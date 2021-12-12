@@ -26,9 +26,9 @@ function HA_sin_output(clean_path, sin_mag=0.05)
     s_ = get_signal(rmz, fs)
     n_ = get_signal(rmx, fs)
 
-    WAV.wavwrite(x, fs, "sound/speech/sin/"*clean_path[findlast("/", clean_path)[1]+1:end-3]*"wav")
+    WAV.wavwrite(x, fs, "sound/speech/sin/sp01_sin.wav")
 
-    JLD.save("sound/separated_jld/speech/sin/"*clean_path[findlast("/", clean_path)[1]+1:end-3]*"jld",
+    JLD.save("sound/separated_jld/speech/sin/sp01_sin.jld",
             "rmz", rmz, "rvz", rvz, "rmθ", rmθ, "rvθ", rvθ, "rγ", rγ, 
             "rmx", rmx, "rvx", rvx, "rmη", rmη, "rvη", rvη, "rτ", rτ,
             "fe", fe, "filename", clean_path)

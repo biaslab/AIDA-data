@@ -12,7 +12,6 @@ function HA_drill_output(clean_path)
     s, fs = WAV.wavread("sound/speech/clean/sp01.wav")
     n = n[1:length(s)]
     x = s .+ n
-    wavwrite(x, fs, "sound/speech/drill/sp01.wav")
 
     AR_order = 3
     inputs, outputs = ar_ssm(n, AR_order)
@@ -32,9 +31,8 @@ function HA_drill_output(clean_path)
     s_ = get_signal(rmz, fs)
     n_ = get_signal(rmx, fs)
 
-    WAV.wavwrite(x, fs, "sound/speech/drill/"*clean_path[findlast("/", clean_path)[1]+1:end-3]*"wav")
-
-    JLD.save("sound/separated_jld/speech/drill/"*clean_path[findlast("/", clean_path)[1]+1:end-3]*"jld",
+    wavwrite(x, fs, "sound/speech/drill/sp01_drill.wav")
+    JLD.save("sound/separated_jld/speech/drill/sp01_drill.jld",
             "rmz", rmz, "rvz", rvz, "rmθ", rmθ, "rvθ", rvθ, "rγ", rγ, 
             "rmx", rmx, "rvx", rvx, "rmη", rmη, "rvη", rvη, "rτ", rτ,
             "fe", fe, "filename", clean_path)
