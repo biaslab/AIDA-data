@@ -43,7 +43,3 @@ function HA_drill_output(clean_path, sin_mag=0.05)
 end
 
 x, s, n = HA_drill_output("sound/speech/clean/sp01.wav")
-plot(x)
-plot!(s)
-wavwrite(s, "example.wav")
-plot!(n)
