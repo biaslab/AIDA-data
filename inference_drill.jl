@@ -6,9 +6,9 @@ using Plots
 using WAV
 using JLD
 
-function HA_drill_output(clean_path, sin_mag=0.05)
+function HA_drill_output(clean_path)
 
-    n, fs = WAV.wavread("sound/speech/drill/drill.wav")
+    n, fs = WAV.wavread("sound/environments/drill.wav")
     s, fs = WAV.wavread("sound/speech/clean/sp01.wav")
     n = n[1:length(s)]
     x = s .+ n
